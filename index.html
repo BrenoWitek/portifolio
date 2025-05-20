@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio de Breno</title>
+  <style>
+    /* Reset básico */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; background-color: #f4f4f4; }
+    header { background-color: #000000; color: #fff; padding: 2rem 1rem; text-align: center; }
+    .profile-photo { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 1px solid #000000; }
+    header h1 { margin-top: 1rem; font-size: 2rem; }
+    header p { font-size: 1.1rem; opacity: 0.8; }
+
+    main { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
+    .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.2s ease;
+    }
+    .card:hover { transform: translateY(-5px); }
+    .card img { width: 100%; height: 160px; object-fit: cover; }
+    .card-content { padding: 1rem; }
+    .card-content h3 { margin-bottom: 0.5rem; }
+    .card-content p { font-size: 0.95rem; margin-bottom: 0.5rem; }
+    .card-content .tech { font-size: 0.85rem; color: #555; }
+    .card-content a {
+      display: inline-block;
+      margin-top: 0.5rem;
+      text-decoration: none;
+      color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://i.ibb.co/zVSnyVLz/459151973-1228076414990397-6545696973510163950-n.jpg" alt="Foto de Breno" class="profile-photo">
+    <h1>Breno Witek - Data Analyst</h1>
+    <p>Portfólio de projetos</p>
+  </header>
+
+  <main>
+    <section class="projects">
+      <article class="card">
+        <img src="projeto1-screenshot.png" alt="Projeto 1 Screenshot">
+        <div class="card-content">
+          <h3>Sistema CMMS</h3>
+          <p>Sistema criado com objetivo de centralizar todos os insights e dados de manutenção, aonde é gerados alertas de manutenção, programação de check-lists,
+            controle de custos de manutenção e demais controles utilizando metricas de manutenção como MTTF, MTBF e taxa de disponibilidade.</p>
+          <p class="tech">Tecnologias: Excel, Visual Basic</p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="projeto1-screenshot.png" alt="Projeto 1 Screenshot">
+        <div class="card-content">
+          <h3>Manutenção com QR-Code</h3>
+          <p>O projeto consiste basicamente em Qr-Codes
+            instalados em cada máquina aonde o mecânico após realizar o serviço, deve efetuar a leitura e registrar o serviço diretamente
+            no Whatsapp aonde posteriormente essas mensagens eram importadas para o CMMS.</p>
+          <p class="tech">Tecnologias: Whatsapp, Python, Excel</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-content">
+          <h3>Relógio Eletrônico de Ponto</h3>
+          <p>Projeto desenvolvido para deinir as rotas dos vigias noturnos, foi criado 5 relógios eletronicos aonde cada vigia tem o seu cartão 
+            e devem efetuar leituras periódicas, isso define sua rota aonde poderia ser consultada pelo seu gestor posteriormente.</p>
+          <p class="tech">Tecnologias: RFID, ESP32, JavaScript, MySQL</p>
+        </div>
+      </article>
+      <article class="card">
+          <div class="card-content">
+            <h3>Aplicativo Mobille</h3>
+            <p>Aplicativo desenvolvido para melhorar diversas operações como conferencias, inventários, controles de estoque, WMS e até mesmo
+              entregas de EPI, a criação do AppKadesh foi um grande salto na automação industrial reduzindo custos e aumentando a produtividade.</p>
+            <p class="tech">Tecnologias: Kotlin, Python, Go, MySQL</p>
+          </div>
+        </article>
+        <article class="card">
+            <div class="card-content">
+              <h3>Sistema de Compras</h3>
+              <p>Sitema completo, desenvolvido para o departamento de compras, integrado diretamente com o sistema ERP da empresa (TOTVS Protheus)
+                com dados essenciais como média de consumo, histórico de compra, preditivo de disponibilidade em dias e projeção de consumo.</p>
+              <p class="tech">Tecnologias: Excel, Visual Basic, Power Query, SQL Server</p>
+            </div>
+          </article>
+          <article class="card">
+              <div class="card-content">
+                <h3>Sistema PDV</h3>
+                <p>Sistema de PDV para controle de saidas de estoque no almoxárifado, alem desse desenvolvimento, foi realizado um planejamento 
+                  robusto de padronização, como classificação de produtos por bloco, endereçamento e etiquetamento unitário de cada produto.</p>
+                <p class="tech">Tecnologias: HTML, CSS, Python</p>
+              </div>
+            </article>
+            <article class="card">
+                <div class="card-content">
+                  <h3>Explosão de Matéria Prima</h3>
+                  <p>Controle desenvolvido em excel que integra o controle o planejamento e controle de produção, com o sistema de compras e controladoria
+                  , consiste em gerar demanda para o departamento de compras e alertas para a controladoria com base na programação da produção.</p>
+                  <p class="tech">Tecnologias: Excel, Visual Basic, MySQL</p>
+                </div>
+              </article>
+              <article class="card">
+                  <div class="card-content">
+                    <h3>Controle de Produto Acabado</h3>
+                    <p>Controle criado para gerenciar as demandas de produtos acabados, com base no histórico de saida e também com controle de estoque 
+                      atualizado, isso contribui para programação de planos de produção, para sempre ter os produtos com maior rotação à pronta entrega.</p>
+                    <p class="tech">Tecnologias:  Excel, Visual Basic, Power Query</p>
+                  </div>
+                </article>
+                <article class="card">
+                    <div class="card-content">
+                      <h3>Controle de Produtividade por Demanda</h3>
+                      <p>Desenvolvimento de sistema para controle de demanda de produção Demanda x Capacidade produtiva aonde o Diretor industrial pode acompanhar
+                        e fazer simulações de aumento ou dimunuição de capacidade de acordo com a sua demanda atual.</p>
+                      <p class="tech">Tecnologias:  Excel, Visual Basic, Power Query</p>
+                    </div>
+                  </article>
+    </section>
+  </main>
+</body>
+</html>
