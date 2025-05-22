@@ -3,124 +3,656 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfólio de Breno</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="icon" href="data:image/png;base64,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"
+  type="image/png">
+  <link rel="manifest" href="/site.webmanifest">
+  <title>Projetos Breno</title>
   <style>
-    /* Reset básico */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; background-color: #f4f4f4; }
-    header { background-color: #000000; color: #fff; padding: 2rem 1rem; text-align: center; }
-    .profile-photo { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 1px solid #000000; }
-    header h1 { margin-top: 1rem; font-size: 2rem; }
-    header p { font-size: 1.1rem; opacity: 0.8; }
+    
+    header {
+    background: linear-gradient(to bottom, #000000, #2c2c2c, #4d4c4c, #797979);
+    background-size: 100% 400%;
+    color: #fff;
+    padding: 2rem 1rem;
+    text-align: center;
+    animation: gradientAnimation 10s ease infinite;
+    min-height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
 
-    main { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
-    .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 0% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+    
+    .profile-photo { 
+      width: 150px; 
+      height: 150px; 
+      border-radius: 50%; 
+      object-fit: cover; 
+      margin-bottom: 1rem;
+    }
+    
+    header h1 { 
+      margin-top: 0.5rem; 
+      font-size: 2rem; 
+      letter-spacing: -0.5px;
+    }
+    
+    header p { 
+      font-size: 1.1rem; 
+      opacity: 0.9;
+      margin-top: 0.5rem;
+    }
+
+    main { 
+      max-width: 1200px; 
+      margin: 2rem auto; 
+      padding: 0 1rem; 
+    }
+    
+    .projects { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+      gap: 2rem; 
+      padding: 1rem 0;
+    }
+
     .card {
       background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       overflow: hidden;
-      transition: transform 0.2s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
     }
-    .card:hover { transform: translateY(-5px); }
-    .card img { width: 100%; height: 160px; object-fit: cover; }
-    .card-content { padding: 1rem; }
-    .card-content h3 { margin-bottom: 0.5rem; }
-    .card-content p { font-size: 0.95rem; margin-bottom: 0.5rem; }
-    .card-content .tech { font-size: 0.85rem; color: #555; }
-    .card-content a {
+
+    .card:hover { 
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    }
+    
+    .card img { 
+      width: 100%; 
+      height: 200px; 
+      object-fit: cover; 
+      border-bottom: 3px solid #f0f0f0;
+    }
+    
+    .card-content { 
+      padding: 1.5rem; 
+      flex-grow: 1;
+    }
+    
+    .card-content h3 { 
+      margin-bottom: 1rem; 
+      color: #2c3e50;
+      font-size: 1.3rem;
+    }
+    
+    .card-content p { 
+      font-size: 0.95rem; 
+      line-height: 1.5;
+      color: #555;
+      margin-bottom: 1rem;
+    }
+    
+    .tech {
       display: inline-block;
+      background: #f0f0f0;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      color: #333;
       margin-top: 0.5rem;
+    }
+
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px 8px 0 0;
+    }
+
+    .carousel-inner {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-item {
+      min-width: 100%;
+      position: relative;
+    }
+
+    .carousel-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      color: white;
+      padding: 10px;
+      cursor: pointer;
+      border: none;
+      z-index: 2;
+    }
+
+    .carousel-nav.prev {
+      left: 0;
+      border-radius: 0 5px 5px 0;
+    }
+
+    .carousel-nav.next {
+      right: 0;
+      border-radius: 5px 0 0 5px;
+    }
+
+    .carousel:has(.carousel-item:only-child) .carousel-nav {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .projects {
+        grid-template-columns: 1fr;
+      }
+      
+      .card img {
+        height: 180px;
+      }
+    }
+   /* Adicione estas novas regras CSS */
+   .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox-img {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+      cursor: pointer;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: white;
+      font-size: 40px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .close-btn:hover {
+      color: #ccc;
+    }
+
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: white;
+      font-size: 40px;
+      cursor: pointer;
+      padding: 15px;
+      background: rgba(0,0,0,0.3);
+      border: none;
+    }
+
+    .prev-btn {
+      left: 30px;
+    }
+
+    .next-btn {
+      right: 30px;
+    }
+
+    /* nova classe */
+    .links {
+      display: flex;
+      gap: 0.8rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .link-item {
       text-decoration: none;
-      color: #2980b9;
+      color: #fff;
+      background-color: #000000;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .link-item:hover {
+      background-color: #616161;
+      transform: translateY(-2px);
+    }
+
+    .link-item i {
+      font-size: 1rem;
+    }
+
+    .link-item.cor { background-color: #000000; }
+
+    /* icones header */
+    .social-icons {
+        margin-top: 1.5rem;
+        display: flex;
+        gap: 1.5rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .social-icons a {
+        color: #e0e0e0; /* Branco acinzentado */
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .social-icons a:hover {
+        color: #ffffff;
+        background-color: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+    }
+
+    .social-icons .fab {
+        font-size: 2rem; /* Tamanho aumentado */
+    }
+
+    .social-icons .fa-whatsapp {
+        color: #e0e0e0; /* Garantindo cor específica para WhatsApp */
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="https://i.ibb.co/zVSnyVLz/459151973-1228076414990397-6545696973510163950-n.jpg" alt="Foto de Breno" class="profile-photo">
-    <h1>Breno Witek - Data Analyst</h1>
-    <p>Portfólio de projetos</p>
+    <img src="https://i.ibb.co/zVSnyVLz/459151973-1228076414990397-6545696973510163950-n.jpg" 
+         alt="Minha foto" 
+         class="profile-photo">
+    <h1>Breno Witek</h1>
+    <p>PORTIFÓLIO DE PROJETOS</p>
+  
+    <div class="social-icons">
+      <a href="https://wa.me/5542999200205?text=Ol%C3%A1%2C%20Breno%21%0A%0ATudo%20bem%3F%20gostaria%20de%20saber%20mais%20sobre%20seus%20projetos!." 
+         target="_blank" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/breno-witek-87aa3222b" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=breno.witek1@gmail.com&su=PROJETOS%20 - %20INDUSTRIAIS&body=Olá%20Breno!%20Gostaria%20de%20saber%20mais%20sobre%20seus%20projetos." aria-label="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
   </header>
 
   <main>
     <section class="projects">
+
+      <!-- Sistema CMMS -->
       <article class="card">
-        <img src="projeto1-screenshot.png" alt="Projeto 1 Screenshot">
+        <div class="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item">
+              <img src="https://i.ibb.co/7x1bRzGY/opencmms.png" alt="Sistema CMMS">
+            </div>
+            <div class="carousel-item">
+              <img src="https://i.ibb.co/bR5YkZg2/dashcmms.png" alt="Dashboard CMMS">
+            </div>
+          </div>
+          <button class="carousel-nav prev">❮</button>
+          <button class="carousel-nav next">❯</button>
+        </div>
         <div class="card-content">
           <h3>Sistema CMMS</h3>
-          <p>Sistema criado com objetivo de centralizar todos os insights e dados de manutenção, aonde é gerados alertas de manutenção, programação de check-lists,
-            controle de custos de manutenção e demais controles utilizando metricas de manutenção como MTTF, MTBF e taxa de disponibilidade.</p>
-          <p class="tech">Tecnologias: Excel, Visual Basic</p>
+          <p>Sistema desenvolvido com o objetivo de centralizar todos os dados e insights relacionados à manutenção. Nele são gerados alertas de manutenção, programações de checklists, controle de custos e demais indicadores, utilizando métricas como MTTF, MTBF e taxa de disponibilidade.</p>
+          <span class="tech">Tecnologias: Excel, VBA, Power Query</span>
+          <div class="links">
+            <a href="https://wa.me/5542999200205?text=Ol%C3%A1%2C%20Breno%21%0A%0ATudo%20bem%3F%20Vi%20que%20voc%C3%AA%20desenvolveu%20um%20projeto%20de%20controle%20de%20manuten%C3%A7%C3%A3o.%0A%0ASe%20poss%C3%ADvel%2C%20gostaria%20de%20obter%20mais%20informa%C3%A7%C3%B5es%20sobre%20ele%2C%20ver%20algumas%20fotos%20adicionais%20e%2C%20caso%20haja%2C%20at%C3%A9%20mesmo%20testar%20uma%20vers%C3%A3o%20demo." target="_blank" rel="noopener noreferrer" class="link-item whatsapp">
+              <i class="link"></i> Saiba Mais
+            </a></i>
+          </div>
         </div>
       </article>
+
+      <!-- Manutenção Conectada -->
       <article class="card">
-        <img src="projeto1-screenshot.png" alt="Projeto 1 Screenshot">
+        <div class="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item">
+              <img src="https://i.ibb.co/1Yf3S5fn/qr-maq.jpg" alt="QR Codes">
+            </div>
+            <div class="carousel-item">
+              <img src="https://i.ibb.co/Y4qz32F1/whatsapp.jpg" alt="Integração WhatsApp">
+            </div>
+            <div class="carousel-item">
+              <img src="https://i.ibb.co/tnZSXWD/rel-man.png" alt="Relatórios">
+            </div>
+          </div>
+          <button class="carousel-nav prev">❮</button>
+          <button class="carousel-nav next">❯</button>
+        </div>
         <div class="card-content">
-          <h3>Manutenção com QR-Code</h3>
-          <p>O projeto consiste basicamente em Qr-Codes
-            instalados em cada máquina aonde o mecânico após realizar o serviço, deve efetuar a leitura e registrar o serviço diretamente
-            no Whatsapp aonde posteriormente essas mensagens eram importadas para o CMMS.</p>
-          <p class="tech">Tecnologias: Whatsapp, Python, Excel</p>
-        </div>
+          <h3>Manutenção Conectada</h3>
+          <p>O projeto consiste na utilização de QR Codes instalados em cada máquina. Após a realização do serviço, o mecânico escaneia o código e registra a manutenção diretamente pelo WhatsApp. Posteriormente, essas mensagens são importadas e integradas ao sistema CMMS.</p>
+          <span class="tech">Tecnologias: WhatsApp, Python, Excel</span>
+          <div class="links">
+            <a href="https://wa.me/5542999200205?text=Ol%C3%A1%2C%20Breno%21%0A%0ATudo%20bem%3F%20Vi%20que%20voc%C3%AA%20desenvolveu%20um%20projeto%20de%20controle%20de%20manuten%C3%A7%C3%A3o.%0A%0ASe%20poss%C3%ADvel%2C%20gostaria%20de%20obter%20mais%20informa%C3%A7%C3%B5es%20sobre%20ele%2C%20ver%20algumas%20fotos%20adicionais%20e%2C%20caso%20haja%2C%20at%C3%A9%20mesmo%20testar%20uma%20vers%C3%A3o%20demo." target="_blank" rel="noopener noreferrer" class="link-item whatsapp">
+              <i class="link"></i> Saiba Mais
+            </a></i>
+          </div>
       </article>
+
+      <!-- Aplicativo Mobile -->
       <article class="card">
+        <div class="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item">
+              <img src="https://i.ibb.co/Z6bMhwcm/login-app.jpg" alt="Login App">
+            </div>
+            <div class="carousel-item">
+              <img src="https://i.ibb.co/Zp7s10pV/entrada-app.jpg" alt="Entrada App">
+            </div>
+            <div class="carousel-item">
+              <img src="https://i.ibb.co/FL8s8dy5/operando-app.jpg" alt="Operação App">
+            </div>
+          </div>
+          <button class="carousel-nav prev">❮</button>
+          <button class="carousel-nav next">❯</button>
+        </div>
+        <div class="card-content">
+          <h3>Aplicativo Mobile</h3>
+          <p>Aplicativo desenvolvido para otimizar diversas operações, como inventários, controle de estoque e WMS. O AppKadesh representou um grande avanço na automação industrial, reduzindo custos e permitindo a rastreabilidade completa do calçado, desde a matéria-prima até a entrega ao cliente final.</p>
+          <span class="tech">Tecnologias: Kotlin, Python, MySQL</span>
+          <div class="links">
+            <a href="https://wa.me/5542999200205?text=Ol%C3%A1%2C%20Breno%21%0A%0ATudo%20bem%3F%20Vi%20que%20voc%C3%AA%20desenvolveu%20um%20aplicativo%20mobile.%0A%0ASe%20poss%C3%ADvel%2C%20gostaria%20de%20obter%20mais%20informa%C3%A7%C3%B5es%20sobre%20ele%2C%20ver%20algumas%20fotos%20adicionais%20e%2C%20caso%20haja%2C%20at%C3%A9%20mesmo%20testar%20uma%20vers%C3%A3o%20demo." target="_blank" rel="noopener noreferrer" class="link-item whatsapp">
+              <i class="link"></i> Saiba Mais
+            </a></i>
+          </div>
+      </article>
+
+      <!-- Relógio Eletrônico -->
+      <article class="card">
+        <div class="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item">
+              <img src="https://i.ibb.co/20RHCXSf/leitor-vigias.jpg" alt="Leitor Vigias">
+            </div>
+            <div class="carousel-item">
+              <img src="https://i.ibb.co/Jjj3GB9b/leitor.jpg" alt="Leitor RFID">
+            </div>
+          </div>
+          <button class="carousel-nav prev">❮</button>
+          <button class="carousel-nav next">❯</button>
+        </div>
         <div class="card-content">
           <h3>Relógio Eletrônico de Ponto</h3>
-          <p>Projeto desenvolvido para deinir as rotas dos vigias noturnos, foi criado 5 relógios eletronicos aonde cada vigia tem o seu cartão 
-            e devem efetuar leituras periódicas, isso define sua rota aonde poderia ser consultada pelo seu gestor posteriormente.</p>
-          <p class="tech">Tecnologias: RFID, ESP32, JavaScript, MySQL</p>
+          <p>Projeto desenvolvido para definir as rotas dos vigias, utilizando relógios eletrônicos baseados em RFID. Cada vigia possui um cartão RFID que deve ser registrado periodicamente. As leituras definem a rota de monitoramento, que pode ser consultada pelo gestor com base na data, horário, local e ID do cartão.</p>
+          <span class="tech">Tecnologias: RFID, ESP32, MySQL</span>
+          <div class="links">
+          <a href="https://wa.me/5542999200205?text=Ol%C3%A1%2C%20Breno%21%0A%0ATudo%20bem%3F%20Vi%20que%20voc%C3%AA%20desenvolveu%20um%20projeto%20embarcado%20de%20controle%20de%20rotas.%0A%0ASe%20poss%C3%ADvel%2C%20gostaria%20de%20obter%20mais%20informa%C3%A7%C3%B5es%20sobre%20ele%2C%20ou%20ver%20algumas%20fotos%20adicionais." target="_blank" rel="noopener noreferrer" class="link-item whatsapp">
+            <i class="link"></i> Saiba Mais
+          </a></i>
         </div>
       </article>
+
+      <!-- Sistema de Compras -->
       <article class="card">
-          <div class="card-content">
-            <h3>Aplicativo Mobille</h3>
-            <p>Aplicativo desenvolvido para melhorar diversas operações como conferencias, inventários, controles de estoque, WMS e até mesmo
-              entregas de EPI, a criação do AppKadesh foi um grande salto na automação industrial reduzindo custos e aumentando a produtividade.</p>
-            <p class="tech">Tecnologias: Kotlin, Python, Go, MySQL</p>
-          </div>
-        </article>
-        <article class="card">
-            <div class="card-content">
-              <h3>Sistema de Compras</h3>
-              <p>Sitema completo, desenvolvido para o departamento de compras, integrado diretamente com o sistema ERP da empresa (TOTVS Protheus)
-                com dados essenciais como média de consumo, histórico de compra, preditivo de disponibilidade em dias e projeção de consumo.</p>
-              <p class="tech">Tecnologias: Excel, Visual Basic, Power Query, SQL Server</p>
+        <div class="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item">
+              <img src="https://i.ibb.co/ynZc4Vb2/SISTEMA-COMPRAS.png" alt="Sistema Compras">
             </div>
-          </article>
-          <article class="card">
-              <div class="card-content">
-                <h3>Sistema PDV</h3>
-                <p>Sistema de PDV para controle de saidas de estoque no almoxárifado, alem desse desenvolvimento, foi realizado um planejamento 
-                  robusto de padronização, como classificação de produtos por bloco, endereçamento e etiquetamento unitário de cada produto.</p>
-                <p class="tech">Tecnologias: HTML, CSS, Python</p>
-              </div>
-            </article>
-            <article class="card">
-                <div class="card-content">
-                  <h3>Explosão de Matéria Prima</h3>
-                  <p>Controle desenvolvido em excel que integra o controle o planejamento e controle de produção, com o sistema de compras e controladoria
-                  , consiste em gerar demanda para o departamento de compras e alertas para a controladoria com base na programação da produção.</p>
-                  <p class="tech">Tecnologias: Excel, Visual Basic, MySQL</p>
-                </div>
-              </article>
-              <article class="card">
-                  <div class="card-content">
-                    <h3>Controle de Produto Acabado</h3>
-                    <p>Controle criado para gerenciar as demandas de produtos acabados, com base no histórico de saida e também com controle de estoque 
-                      atualizado, isso contribui para programação de planos de produção, para sempre ter os produtos com maior rotação à pronta entrega.</p>
-                    <p class="tech">Tecnologias:  Excel, Visual Basic, Power Query</p>
-                  </div>
-                </article>
-                <article class="card">
-                    <div class="card-content">
-                      <h3>Controle de Produtividade por Demanda</h3>
-                      <p>Desenvolvimento de sistema para controle de demanda de produção Demanda x Capacidade produtiva aonde o Diretor industrial pode acompanhar
-                        e fazer simulações de aumento ou dimunuição de capacidade de acordo com a sua demanda atual.</p>
-                      <p class="tech">Tecnologias:  Excel, Visual Basic, Power Query</p>
-                    </div>
-                  </article>
+            <div class="carousel-item">
+              <img src="https://i.ibb.co/LdMT2j8t/Compras.png" alt="Dashboard Compras">
+            </div>
+          </div>
+          <button class="carousel-nav prev">❮</button>
+          <button class="carousel-nav next">❯</button>
+        </div>
+        <div class="card-content">
+          <h3>Sistema de Compras</h3>
+          <p>Sistema completo desenvolvido e integrado diretamente ao ERP da empresa (TOTVS Protheus). O sistema entrega dados relevantes como média de consumo, histórico de compras, predição de disponibilidade em dias, e projeção detalhada de consumo com base nos planos de produção.</p>
+          <span class="tech">Tecnologias: Excel, SQL, Pw Pivot</span>
+          <div class="links">
+            <a href="https://wa.me/5542999200205?text=Ol%C3%A1%2C%20Breno%21%0A%0ATudo%20bem%3F%20Vi%20que%20voc%C3%AA%20desenvolveu%20um%20sistema%20de%20compras.%0A%0ASe%20poss%C3%ADvel%2C%20gostaria%20de%20obter%20mais%20informa%C3%A7%C3%B5es%20sobre%20ele%2C%20ver%20algumas%20fotos%20adicionais%20e%2C%20caso%20haja%2C%20at%C3%A9%20mesmo%20testar%20uma%20vers%C3%A3o%20demo." target="_blank" rel="noopener noreferrer" class="link-item whatsapp">
+              <i class="link"></i> Saiba Mais
+            </a></i>
+          </div>
+      </article>
+
+      <!-- Sistema PDV -->
+      <article class="card">
+        <div class="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item">
+              <img src="https://i.ibb.co/Z1Kz1VrC/pdv.png" alt="Sistema PDV">
+            </div>
+            <div class="carousel-item">
+              <img src="https://i.ibb.co/k2d3jZxR/ALMOX.png" alt="Controle Almoxarifado">
+            </div>
+          </div>
+          <button class="carousel-nav prev">❮</button>
+          <button class="carousel-nav next">❯</button>
+        </div>
+        <div class="card-content">
+          <h3>Sistema PDV e Padronizações</h3>
+          <p>Sistema de PDV desenvolvido para controle de saídas de estoque no almoxarifado. Além do sistema, foi implementado um planejamento de padronização, incluindo a classificação de produtos por blocos, endereçamento, etiquetagem unitária de cada item e um sistema de gerenciamento de estoque.</p>
+          <span class="tech">Tecnologias: HTML, CSS, Python</span>
+          <div class="links">
+            <a href="https://wa.me/5542999200205?text=Ol%C3%A1%2C%20Breno%21%0A%0ATudo%20bem%3F%20Vi%20que%20voc%C3%AA%20desenvolveu%20um%20projeto%20de%20controle%20de%20estoque.%0A%0ASe%20poss%C3%ADvel%2C%20gostaria%20de%20obter%20mais%20informa%C3%A7%C3%B5es%20sobre%20ele%2C%20ver%20algumas%20fotos%20adicionais%20e%2C%20caso%20haja%2C%20at%C3%A9%20mesmo%20testar%20uma%20vers%C3%A3o%20demo." target="_blank" rel="noopener noreferrer" class="link-item whatsapp">
+              <i class="link"></i> Saiba Mais
+            </a></i>
+          </div>
+      </article>
+
+      <!-- Explosão Matéria Prima -->
+      <article class="card">
+        <div class="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item">
+              <img src="https://i.ibb.co/HDjK5xf3/EXPLOSAO-MAT-PRIM.png" alt="Controle Matéria Prima">
+            </div>
+          </div>
+        </div>
+        <div class="card-content">
+          <h3>Explosão de Matéria Prima</h3>
+          <p>Controle desenvolvido em Excel para integrar o planejamento e controle de produção (PCP) com os departamentos de compras e controladoria. O sistema gera automaticamente demandas para o setor de compras e envia alertas à controladoria com base na programação da produção.</p>
+          <span class="tech">Tecnologias: Excel, VBA, Power Query</span>
+          <div class="links">
+            <a href="https://wa.me/5542999200205?text=Ol%C3%A1%2C%20Breno%21%0A%0ATudo%20bem%3F%20Vi%20que%20voc%C3%AA%20desenvolveu%20um%20sistema%20automatico%20de%20controle%20de%20materia%20prima.%0A%0ASe%20poss%C3%ADvel%2C%20gostaria%20de%20obter%20mais%20informa%C3%A7%C3%B5es%20sobre%20ele%2C%20ver%20algumas%20fotos%20adicionais%20e%2C%20caso%20haja%2C%20at%C3%A9%20mesmo%20testar%20uma%20vers%C3%A3o%20demo." target="_blank" rel="noopener noreferrer" class="link-item whatsapp">
+              <i class="link"></i> Saiba Mais
+            </a></i>
+          </div>
+      </article>
+
+      <!-- Controle Produto Acabado -->
+      <article class="card">
+        <div class="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item">
+              <img src="https://i.ibb.co/5Xg2dz8S/controle-demanda-acabdo.jpg" alt="Produto Acabado">
+            </div>
+          </div>
+        </div>
+        <div class="card-content">
+          <h3>Controle de Produto Acabado</h3>
+          <p>Controle desenvolvido para gerenciar a demanda de produtos acabados, com base no histórico de saídas e no estoque atualizado. A ferramenta contribui diretamente para a programação da produção, garantindo que os produtos de maior giro estejam sempre disponíveis para pronta entrega.</p>
+          <span class="tech">Tecnologias: Excel, VBA, Power Query</span>
+          <div class="links">
+            <a href="https://wa.me/5542999200205?text=Ol%C3%A1%2C%20Breno%21%0A%0ATudo%20bem%3F%20Vi%20que%20voc%C3%AA%20desenvolveu%20um%20projeto%20de%20controle%20de%20produto%20acabado.%0A%0ASe%20poss%C3%ADvel%2C%20gostaria%20de%20obter%20mais%20informa%C3%A7%C3%B5es%20sobre%20ele%2C%20ver%20algumas%20fotos%20adicionais%20e%2C%20caso%20haja%2C%20at%C3%A9%20mesmo%20testar%20uma%20vers%C3%A3o%20demo." target="_blank" rel="noopener noreferrer" class="link-item whatsapp">
+              <i class="link"></i> Saiba Mais
+            </a></i>
+          </div>
+      </article>
+
+      <!-- Produtividade por Demanda -->
+      <article class="card">
+        <div class="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item">
+              <img src="https://i.ibb.co/0RQNGxfK/demanda.png" alt="Produtividade">
+            </div>
+          </div>
+        </div>
+        <div class="card-content">
+          <h3>Controle de Produtividade</h3>
+          <p>Desenvolvimento de sistema para controle de demanda de produção, comparando Demanda x Capacidade Produtiva. A ferramenta permite ao Diretor Industrial acompanhar em tempo real a capacidade produtiva da empresa e realizar simulações de aumento ou redução de capacidade com base na demanda atual.</p>
+          <span class="tech">Tecnologias: Excel, VBA, Power Query</span>
+          <div class="links">
+            <a href="https://wa.me/5542999200205?text=Ol%C3%A1%2C%20Breno%21%0A%0ATudo%20bem%3F%20Vi%20que%20voc%C3%AA%20desenvolveu%20um%20projeto%20de%20controle%20de%20produtividade%20por%20demanda.%0A%0ASe%20poss%C3%ADvel%2C%20gostaria%20de%20obter%20mais%20informa%C3%A7%C3%B5es%20sobre%20ele%2C%20ver%20algumas%20fotos%20adicionais%20e%2C%20caso%20haja%2C%20at%C3%A9%20mesmo%20testar%20uma%20vers%C3%A3o%20demo." target="_blank" rel="noopener noreferrer" class="link-item whatsapp">
+              <i class="link"></i> Saiba Mais
+            </a></i>
+          </div>
+      </article>
     </section>
   </main>
+
+  <div class="lightbox" id="lightbox">
+    <span class="close-btn" onclick="closeLightbox()">&times;</span>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="Imagem em tela cheia">
+    <button class="nav-btn prev-btn" onclick="changeImage(-1)">❮</button>
+    <button class="nav-btn next-btn" onclick="changeImage(1)">❯</button>
+  </div>
+
+  <script>
+    // Animação da mão clicadora
+document.addEventListener('DOMContentLoaded', function() {
+  const clickIndicator = document.createElement('div');
+  clickIndicator.innerHTML = `
+    <div style="position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 1000; text-align: center; animation: float 2s infinite;">
+  <img src="https://i.ibb.co/fVgThk7Z/pointer.png" alt="Clique aqui" style="height: 40px; margin-bottom: 10px;" />
+  <div style="color: white; background: rgba(0,0,0,0.7); padding: 8px 15px; border-radius: 20px; font-size: 14px;">
+    Toque nas imagens para ampliá-las.
+  </div>
+</div>
+  `;
+
+  document.body.appendChild(clickIndicator);
+
+  // Adiciona estilo de animação
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes float {
+      0% { transform: translate(-50%, 0); }
+      50% { transform: translate(-50%, -10px); }
+      100% { transform: translate(-50%, 0); }
+    }
+  `;
+  document.head.appendChild(style);
+
+  // Remove o indicador após 5 segundos ou no primeiro clique
+  setTimeout(() => {
+    clickIndicator.remove();
+  }, 4000);
+
+  document.addEventListener('click', () => {
+    clickIndicator.remove();
+  }, { once: true });
+});
+    // Carrossel principal
+    document.querySelectorAll('.carousel').forEach(carousel => {
+      const items = carousel.querySelectorAll('.carousel-item');
+      const prevBtn = carousel.querySelector('.prev');
+      const nextBtn = carousel.querySelector('.next');
+      let currentIndex = 0;
+
+      function updateCarousel() {
+        carousel.querySelector('.carousel-inner').style.transform = 
+          `translateX(-${currentIndex * 100}%)`;
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+          currentIndex = Math.max(currentIndex - 1, 0);
+          updateCarousel();
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+          currentIndex = Math.min(currentIndex + 1, items.length - 1);
+          updateCarousel();
+        });
+      }
+    });
+
+    // Lightbox
+    let currentImages = [];
+    let currentLightboxIndex = 0;
+
+    document.querySelectorAll('.carousel-item img').forEach(img => {
+      img.style.cursor = 'zoom-in';
+      img.addEventListener('click', function() {
+        const carousel = this.closest('.carousel');
+        currentImages = Array.from(carousel.querySelectorAll('img')).map(img => img.src);
+        currentLightboxIndex = currentImages.indexOf(this.src);
+        openLightbox(currentImages[currentLightboxIndex]);
+      });
+    });
+
+    function openLightbox(src) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      lightboxImg.src = src;
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    function changeImage(step) {
+      currentLightboxIndex = (currentLightboxIndex + step + currentImages.length) % currentImages.length;
+      document.getElementById('lightbox-img').src = currentImages[currentLightboxIndex];
+    }
+
+    // Fechar com ESC ou clique fora
+    document.addEventListener('keydown', (e) => {
+      if(e.key === 'Escape') closeLightbox();
+    });
+
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+      if(e.target === this) closeLightbox();
+    });
+</script>
 </body>
 </html>
